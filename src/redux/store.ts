@@ -1,9 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
-import middleware from '@/redux/middleware';
+import { configureStore } from "@reduxjs/toolkit";
+
+import middleware from "@/redux/middleware";
 
 export const store = configureStore({
   reducer: {},
-  devTools: process.env.NODE_ENV !== 'production',
+  devTools: process.env.NODE_ENV !== "production",
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware().concat(...middleware);
   },
