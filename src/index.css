@@ -74,3 +74,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+.header-backgound {
+  background-image: url('/images/header-backgound-lg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
