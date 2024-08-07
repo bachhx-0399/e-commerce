@@ -2,5 +2,6 @@
     "headerTitle": "Stop looking for an item — find it.",
     "searchHeaderIconAlt": "Search icon",
     "algoliaHeaderIconAlt": "Go to algolia",
-    "headerSearchPlaceholder": "Product, brand, color, …"
+    "headerSearchPlaceholder": "Product, brand, color, …",
+    "ratingScore": "Rating score"
 }
