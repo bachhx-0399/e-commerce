@@ -17,12 +17,12 @@ export function Header() {
             src="/images/algolia.svg"
             width={92}
             height={24}
-            alt={t("algoliaHeaderIconAlt")}
+            alt={t("Algolia_Header_Icon_Alt")}
           />
         </a>
       </p>
       <p className="my-9 flex justify-center text-5xl font-thin text-white">
-        {t("headerTitle")}
+        {t("Header_Title")}
       </p>
       <div className="mx-auto w-1/2">
         <div className="relative flex h-14 w-full items-center overflow-hidden rounded-lg bg-white focus-within:shadow-lg">
@@ -30,14 +30,14 @@ export function Header() {
             <img
               src="/images/search.svg"
               className="size-6"
-              alt={t("searchHeaderIconAlt")}
+              alt={t("Search_Header_Icon_Alt")}
             />
           </div>
           <input
             className="peer size-full pr-2 text-sm text-gray-700 outline-none placeholder:text-gray-300"
             type="text"
             id="search"
-            placeholder={t("headerSearchPlaceholder")}
+            placeholder={t("Header_Search_Placeholder")}
             value={searchValue}
             onChange={handleChange}
           />

@@ -1,7 +1,13 @@
 {
-    "headerTitle": "Stop looking for an item — find it.",
-    "searchHeaderIconAlt": "Search icon",
-    "algoliaHeaderIconAlt": "Go to algolia",
-    "headerSearchPlaceholder": "Product, brand, color, …",
-    "ratingScore": "Rating score"
+    "Header_Title": "Stop looking for an item — find it.",
+    "Search_Header_Icon_Alt": "Search icon",
+    "Algolia_Header_Icon_Alt": "Go to algolia",
+    "Header_Search_Placeholder": "Product, brand, color, …",
+    "Rating_Score": "Rating score",
+    "Category": "Category",
+    "Collapse": "Collapse",
+    "Expan": "Expan",
+    "Filter": "Filter",
+    "Loading_Ellipsis": "Loading...",
+    "Error": "Error"
 }
