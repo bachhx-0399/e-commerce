@@ -80,3 +80,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+div.container > ul.ml-3\.5:first-child {
+  margin: 0;
+}

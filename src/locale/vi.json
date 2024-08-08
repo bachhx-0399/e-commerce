@@ -3,5 +3,8 @@
     "searchHeaderIconAlt": "Icon tìm kiếm",
     "algoliaHeaderIconAlt": "Đi đến algolia",
     "headerSearchPlaceholder": "Sản phẩm, thương hiệu, màu sắc, …",
-    "ratingScore": "Điểm đánh giá"
+    "ratingScore": "Điểm đánh giá",
+    "Category": "Thể loại",
+    "Collapse": "Thu gọn",
+    "Expan": "Mở rộng"
 }

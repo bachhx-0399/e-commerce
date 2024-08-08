@@ -3,5 +3,8 @@
     "searchHeaderIconAlt": "Search icon",
     "algoliaHeaderIconAlt": "Go to algolia",
     "headerSearchPlaceholder": "Product, brand, color, …",
-    "ratingScore": "Rating score"
+    "ratingScore": "Rating score",
+    "Category": "Category",
+    "Collapse": "Collapse",
+    "Expan": "Expan"
 }

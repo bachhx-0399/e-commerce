@@ -1,10 +1,13 @@
 import { MainBody } from "./main-body";
+import { Sidebar } from "./sidebar/sidebar";
 
 export function Body() {
   return (
     <div className="mx-14 px-4 py-8">
       <main className="flex space-x-3">
-        <div className="flex-none">Sidebar</div>
+        <div className="mr-14 flex-none">
+          <Sidebar />
+        </div>
         <section className="flex-1">
           <MainBody />
         </section>
