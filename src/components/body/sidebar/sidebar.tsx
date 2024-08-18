@@ -6,6 +6,7 @@ import { useAppSelector } from "@/redux/hooks";
 
 import { Category } from "./category";
 import type { CategoryProps } from "./category-props.type";
+import { Header } from "./header";
 
 export function Sidebar() {
   const [data, setData] = useState<CategoryProps[]>([]);
@@ -25,9 +26,9 @@ export function Sidebar() {
         const categoryData: CategoryProps[] = await response.json();
 
         setData(categoryData);
-        setLoading(false);
       } catch (error) {
         setIsError((error as Error).message);
+      } finally {
         setLoading(false);
       }
     };
@@ -59,7 +60,9 @@ export function Sidebar() {
 
   return (
     <div className="container m-0 p-0">
-      <div className="container">{t("Filter")}</div>
+      <div className="container">
+        <Header />
+      </div>
       <div className="container flex">
         <Category categories={data} />
       </div>
