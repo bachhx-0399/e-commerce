@@ -1,7 +1,13 @@
 {
-    "headerTitle": "Tìm kiếm dễ dàng hơn bao giờ hết.",
-    "searchHeaderIconAlt": "Icon tìm kiếm",
-    "algoliaHeaderIconAlt": "Đi đến algolia",
-    "headerSearchPlaceholder": "Sản phẩm, thương hiệu, màu sắc, …",
-    "ratingScore": "Điểm đánh giá"
+    "Header_Title": "Tìm kiếm dễ dàng hơn bao giờ hết.",
+    "Search_Header_Icon_Alt": "Icon tìm kiếm",
+    "Algolia_Header_Icon_Alt": "Đi đến algolia",
+    "Header_Search_Placeholder": "Sản phẩm, thương hiệu, màu sắc, …",
+    "Rating_Score": "Điểm đánh giá",
+    "Category": "Thể loại",
+    "Collapse": "Thu gọn",
+    "Expan": "Mở rộng",
+    "Filter": "Bộ lọc",
+    "Loading_Ellipsis": "Đang tải...",
+    "Error": "Lỗi"
 }

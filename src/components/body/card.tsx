@@ -35,7 +35,7 @@ export function Card() {
               <img
                 src="/images/start.svg"
                 className="size-2"
-                alt={t("ratingScore")}
+                alt={t("ratingRating_ScoreScore")}
               />
               4
             </span>
