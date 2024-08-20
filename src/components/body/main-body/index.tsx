@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { ENV } from "@/components/const/env.const";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setCards, setFilteredCards } from "@/redux/slices/cards-slice";
 
 import { Card } from "./card";
-import type { CardProps } from "./card/card.type";
 import { Header } from "./header";
 
 export function MainBody() {
@@ -19,15 +19,14 @@ export function MainBody() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/cards-data.json");
+        const response = await fetch(`${ENV.VITE_SERVER_DOMAIN}/cards`);
         if (!response.ok) {
           throw new Error(t("Network_Response_Was_Not_Ok"));
         }
 
         const data = await response.json();
-        const cardsData: CardProps[] = data.items;
 
-        dispatch(setCards(cardsData));
+        dispatch(setCards(data));
       } catch (error) {
         setIsError((error as Error).message);
       } finally {
@@ -36,13 +35,13 @@ export function MainBody() {
     };
 
     fetchData();
-  }, [dispatch]);
+  }, [dispatch, t]);
 
   useEffect(() => {
     if (filterParams) {
-      const { hitsPerPage = 16, sortBy, currentPage } = filterParams;
+      const { hitsPerPage = 16, sortBy, currentPage, brand } = filterParams;
 
-      const sortedCards = [...cards].sort((a, b) => {
+      let sortedCards = [...cards].sort((a, b) => {
         switch (sortBy) {
           case "instant_search_price_asc":
             return a.price - b.price;
@@ -52,6 +51,12 @@ export function MainBody() {
             return 0;
         }
       });
+
+      if (brand.length > 0) {
+        sortedCards = sortedCards.filter((card) =>
+          brand.includes(card.brand as string),
+        );
+      }
 
       const updatedFilteredCards = sortedCards.slice(
         (currentPage - 1) * hitsPerPage,

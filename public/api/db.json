@@ -1,5 +1,124 @@
 {
-  "items" : [
+  "brands": [
+    { "name": "Apple", "count": 442 },
+    { "name": "GE", "count": 394 },
+    { "name": "HP", "count": 530 },
+    { "name": "Incipio", "count": 320 },
+    { "name": "Insignia™", "count": 746 },
+    { "name": "KitchenAid", "count": 318 },
+    { "name": "Metra", "count": 591 },
+    { "name": "Samsung", "count": 633 },
+    { "name": "Sony", "count": 350 },
+    { "name": "Whirlpool", "count": 298 },
+    { "name": "Bosch", "count": 415 },
+    { "name": "Dyson", "count": 278 },
+    { "name": "LG", "count": 522 },
+    { "name": "Panasonic", "count": 460 },
+    { "name": "Philips", "count": 372 },
+    { "name": "Toshiba", "count": 309 },
+    { "name": "Vizio", "count": 265 },
+    { "name": "Bose", "count": 435 },
+    { "name": "JBL", "count": 389 },
+    { "name": "GoPro", "count": 250 },
+    { "name": "Intel", "count": 785 },
+    { "name": "AMD", "count": 645 },
+    { "name": "NVIDIA", "count": 580 },
+    { "name": "Microsoft", "count": 890 },
+    { "name": "Cisco", "count": 510 },
+    { "name": "Dell", "count": 635 },
+    { "name": "Lenovo", "count": 720 },
+    { "name": "Asus", "count": 495 },
+    { "name": "Acer", "count": 380 },
+    { "name": "Qualcomm", "count": 570 },
+    { "name": "Xiaomi", "count": 410 },
+    { "name": "Huawei", "count": 540 },
+    { "name": "OnePlus", "count": 325 },
+    { "name": "Oculus", "count": 265 },
+    { "name": "HTC", "count": 340 },
+    { "name": "Razer", "count": 295 },
+    { "name": "Alienware", "count": 420 },
+    { "name": "Logitech", "count": 620 },
+    { "name": "Corsair", "count": 455 }
+  ],
+  "categories": [
+    {
+      "name": "Appliances",
+      "count": 2448,
+      "subCategory": [
+        {
+          "name": "Air Purifiers",
+          "count": 54,
+          "subCategory": []
+        },
+        {
+          "name": "Fans",
+          "count": 89,
+          "subCategory": []
+        },
+        {
+          "name": "Handheld & Stick Vacuums",
+          "count": 89,
+          "subCategory": []
+        },
+        {
+          "name": "Heaters",
+          "count": 75,
+          "subCategory": []
+        },
+        {
+          "name": "Humidifiers",
+          "count": 59,
+          "subCategory": []
+        },
+        {
+          "name": "Microwaves",
+          "count": 127,
+          "subCategory": []
+        },
+        {
+          "name": "Refrigerators",
+          "count": 52,
+          "subCategory": []
+        },
+        {
+          "name": "Robot Vacuums and Mops",
+          "count": 43,
+          "subCategory": []
+        },
+        {
+          "name": "Small Kitchen Appliances",
+          "count": 1408,
+          "subCategory": []
+        },
+        {
+          "name": "Upright Vacuums",
+          "count": 45,
+          "subCategory": []
+        }
+      ]
+    },
+    {
+      "name": "Audio",
+      "count": 1376,
+      "subCategory": []
+    },
+    {
+      "name": "Cameras & Camcorders",
+      "count": 1269,
+      "subCategory": []
+    },
+    {
+      "name": "Car Electronics & GPS",
+      "count": 1156,
+      "subCategory": []
+    },
+    {
+      "name": "Cell Phones",
+      "count": 3065,
+      "subCategory": []
+    }
+  ],
+  "cards" : [
     {
       "name": "Amazon - Fire TV Stick with Alexa Voice Remote - Black",
       "description": "Enjoy smart access to videos, games and apps with this Amazon Fire TV stick. Its Alexa voice remote lets you deliver hands-free commands when you want to watch television or engage with other applications. With a quad-core processor, 1GB internal memory and 8GB of storage, this portable Amazon Fire TV stick works fast for buffer-free streaming.",

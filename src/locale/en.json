@@ -18,5 +18,7 @@
     "Price_Ascending": "Price ascending",
     "Price_Descending": "Price descending",
     "Do_Not_Have_Category": "Do not have category",
-    "Network_Response_Was_Not_Ok": "Network response was not ok"
+    "Network_Response_Was_Not_Ok": "Network response was not ok",
+    "Brands": "Brands",
+    "Sidebar_Search_Branch_Placeholder": "Search for brands…"
 }

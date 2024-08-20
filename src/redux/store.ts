@@ -4,10 +4,13 @@ import middleware from "@/redux/middleware";
 import cardsSlice from "@/redux/slices/cards-slice";
 import filterParamsSlice from "@/redux/slices/filter-params-slice";
 
+import brandsSlices from "./slices/brands-slices";
+
 export const store = configureStore({
   reducer: {
     filterParams: filterParamsSlice,
     cards: cardsSlice,
+    brands: brandsSlices,
   },
   devTools: process.env.NODE_ENV !== "production",
   middleware: (getDefaultMiddleware) => {

@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
+import { ENV } from "@/components/const/env.const";
 import { useAppSelector } from "@/redux/hooks";
 
+import { Brands } from "./brands";
 import { Category } from "./category";
 import type { CategoryProps } from "./category-props.type";
 import { Header } from "./header";
@@ -19,7 +21,7 @@ export function Sidebar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/category-data.json");
+        const response = await fetch(`${ENV.VITE_SERVER_DOMAIN}/categories`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -39,7 +41,7 @@ export function Sidebar() {
   // Use effect to update params whenever filterParams change
   useEffect(() => {
     if (filterParams) {
-      const { category, hitsPerPage, sortBy } = filterParams;
+      const { category, hitsPerPage, sortBy, brand } = filterParams;
 
       const searchParams = new URLSearchParams();
       if (hitsPerPage !== undefined && hitsPerPage !== 16) {
@@ -47,6 +49,12 @@ export function Sidebar() {
       }
       if (sortBy !== undefined && sortBy !== "instant_search") {
         searchParams.set("sortBy", sortBy);
+      }
+
+      if (brand.length > 0) {
+        brand.forEach((value) => {
+          searchParams.append("brands", value);
+        });
       }
 
       // Update the URL with new params
@@ -73,8 +81,9 @@ export function Sidebar() {
       <div className="container border-b-2 border-inherit p-0">
         <Header />
       </div>
-      <div className="container flex p-0 py-8">
+      <div className="container flex flex-col p-0 py-8">
         <Category categories={data} />
+        <Brands />
       </div>
     </div>
   );
