@@ -6,11 +6,15 @@ import { createSlice } from "@reduxjs/toolkit";
 interface FilterParams {
   category: string;
   brand: string[];
+  currentPage: number;
+  sortBy?: string;
+  hitsPerPage?: number;
 }
 
 const initialState: FilterParams = {
   category: "",
   brand: [],
+  currentPage: 1,
 };
 
 const filterParamsSlice = createSlice({
@@ -31,10 +35,26 @@ const filterParamsSlice = createSlice({
     setBrand: (state, action: PayloadAction<string[]>) => {
       state.brand = action.payload;
     },
+    setSortBy: (state, action: PayloadAction<string>) => {
+      state.sortBy = action.payload;
+    },
+    setHitsPerPage: (state, action: PayloadAction<number>) => {
+      state.hitsPerPage = action.payload;
+    },
+    setCurrentPage: (state, action: PayloadAction<number>) => {
+      state.currentPage = action.payload;
+    },
   },
 });
 
-export const { setParams, resetParams, setCategory, setBrand } =
-  filterParamsSlice.actions;
+export const {
+  setParams,
+  resetParams,
+  setCategory,
+  setBrand,
+  setSortBy,
+  setHitsPerPage,
+  setCurrentPage,
+} = filterParamsSlice.actions;
 
 export default filterParamsSlice.reducer;

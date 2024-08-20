@@ -9,5 +9,14 @@
     "Expan": "Expan",
     "Filter": "Filter",
     "Loading_Ellipsis": "Loading...",
-    "Error": "Error"
+    "Error": "Error",
+    "Clear_Filters": "Clear filters",
+    "16_Hits_Per_Page": "16 hits per page",
+    "32_Hits_Per_Page": "32 hits per page",
+    "64_Hits_Per_Page": "64 hits per page",
+    "Sort_By_Featured": "Sort by featured",
+    "Price_Ascending": "Price ascending",
+    "Price_Descending": "Price descending",
+    "Do_Not_Have_Category": "Do not have category",
+    "Network_Response_Was_Not_Ok": "Network response was not ok"
 }

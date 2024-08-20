@@ -6,6 +6,7 @@ import { useAppSelector } from "@/redux/hooks";
 
 import { Category } from "./category";
 import type { CategoryProps } from "./category-props.type";
+import { Header } from "./header";
 
 export function Sidebar() {
   const [data, setData] = useState<CategoryProps[]>([]);
@@ -25,9 +26,9 @@ export function Sidebar() {
         const categoryData: CategoryProps[] = await response.json();
 
         setData(categoryData);
-        setLoading(false);
       } catch (error) {
         setIsError((error as Error).message);
+      } finally {
         setLoading(false);
       }
     };
@@ -38,10 +39,20 @@ export function Sidebar() {
   // Use effect to update params whenever filterParams change
   useEffect(() => {
     if (filterParams) {
-      const { category } = filterParams;
+      const { category, hitsPerPage, sortBy } = filterParams;
+
+      const searchParams = new URLSearchParams();
+      if (hitsPerPage !== undefined && hitsPerPage !== 16) {
+        searchParams.set("hitsPerPage", hitsPerPage.toString());
+      }
+      if (sortBy !== undefined && sortBy !== "instant_search") {
+        searchParams.set("sortBy", sortBy);
+      }
 
       // Update the URL with new params
-      navigate(`/examples/react/e-commerce/search/${category}`);
+      navigate(
+        `/examples/react/e-commerce/search/${category}?${searchParams.toString()}`,
+      );
     }
   }, [filterParams, navigate]);
 
@@ -58,9 +69,11 @@ export function Sidebar() {
   }
 
   return (
-    <div className="container m-0 p-0">
-      <div className="container">{t("Filter")}</div>
-      <div className="container flex">
+    <div className="container p-0">
+      <div className="container border-b-2 border-inherit p-0">
+        <Header />
+      </div>
+      <div className="container flex p-0 py-8">
         <Category categories={data} />
       </div>
     </div>

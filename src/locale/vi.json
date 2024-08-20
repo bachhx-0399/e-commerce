@@ -9,5 +9,14 @@
     "Expan": "Mở rộng",
     "Filter": "Bộ lọc",
     "Loading_Ellipsis": "Đang tải...",
-    "Error": "Lỗi"
+    "Error": "Lỗi",
+    "Clear_Filters": "Xóa bộ lọc",
+    "16_Hits_Per_Page": "16 sản phẩm trong một trang",
+    "32_Hits_Per_Page": "32 sản phẩm trong một trang",
+    "64_Hits_Per_Page": "64 sản phẩm trong một trang",
+    "Sort_By_Featured": "Sắp xếp theo sản phẩm",
+    "Price_Ascending": "Giá tăng dần",
+    "Price_Descending": "Giá giảm dần",
+    "Do_Not_Have_Category": "Không có tên thể loại",
+    "Network_Response_Was_Not_Ok": "Kết quả phản hồi không tốt"
 }
