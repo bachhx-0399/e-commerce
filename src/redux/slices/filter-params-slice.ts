@@ -9,6 +9,7 @@ interface FilterParams {
   category: string;
   brand: string[];
   currentPage: number;
+  totalPages: number;
   rangeValues: number[];
   freeShipping: boolean;
   rating?: RatingOption;
@@ -20,6 +21,7 @@ const initialState: FilterParams = {
   category: "",
   brand: [],
   currentPage: 1,
+  totalPages: 1,
   rangeValues: [0, 5000],
   freeShipping: false,
 };
@@ -60,6 +62,9 @@ const filterParamsSlice = createSlice({
     setRating: (state, action: PayloadAction<RatingOption>) => {
       state.rating = action.payload;
     },
+    setTotalPages: (state, action: PayloadAction<number>) => {
+      state.totalPages = action.payload;
+    },
   },
 });
 
@@ -74,6 +79,7 @@ export const {
   setRangeValues,
   setFreeShipping,
   setRating,
+  setTotalPages,
 } = filterParamsSlice.actions;
 
 export default filterParamsSlice.reducer;

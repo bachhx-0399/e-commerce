@@ -53,6 +53,7 @@ export function Sidebar() {
         rangeValues,
         freeShipping,
         rating,
+        currentPage,
       } = filterParams;
 
       const searchParams = new URLSearchParams();
@@ -80,6 +81,10 @@ export function Sidebar() {
 
       if (rating) {
         searchParams.set("rating", rating.toString());
+      }
+
+      if (currentPage !== 1) {
+        searchParams.set("page", currentPage.toString());
       }
 
       // Update the URL with new params

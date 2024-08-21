@@ -5,9 +5,14 @@ import { ENV } from "@/components/const/env.const";
 import { MAX_PRICE, MIN_PRICE } from "@/components/const/price-range-const";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setCards, setFilteredCards } from "@/redux/slices/cards-slice";
+import {
+  setCurrentPage,
+  setTotalPages,
+} from "@/redux/slices/filter-params-slice";
 
 import { Card } from "./card";
 import { Header } from "./header";
+import { Pagination } from "./pagination";
 
 export function MainBody() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -48,6 +53,7 @@ export function MainBody() {
         freeShipping,
         rangeValues,
         rating,
+        totalPages,
       } = filterParams;
 
       let sortedCards = [...cards].sort((a, b) => {
@@ -87,7 +93,15 @@ export function MainBody() {
         currentPage * hitsPerPage,
       );
 
+      // Rounded up
+      const updateTotalPage = Math.ceil(sortedCards.length / hitsPerPage);
+
       dispatch(setFilteredCards(updatedFilteredCards));
+      dispatch(setTotalPages(updateTotalPage));
+
+      if (totalPages !== updateTotalPage) {
+        dispatch(setCurrentPage(1));
+      }
     }
   }, [filterParams, dispatch, cards]);
 
@@ -112,6 +126,9 @@ export function MainBody() {
         {filteredCards.map((card, index) => (
           <Card key={index} {...card} />
         ))}
+      </div>
+      <div className="flex flex-col items-center">
+        {filterParams.totalPages !== 1 && <Pagination />}
       </div>
     </div>
   );
