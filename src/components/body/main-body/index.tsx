@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ENV } from "@/components/const/env.const";
+import { MAX_PRICE, MIN_PRICE } from "@/components/const/price-range-const";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setCards, setFilteredCards } from "@/redux/slices/cards-slice";
 
@@ -39,7 +40,15 @@ export function MainBody() {
 
   useEffect(() => {
     if (filterParams) {
-      const { hitsPerPage = 16, sortBy, currentPage, brand } = filterParams;
+      const {
+        hitsPerPage = 16,
+        sortBy,
+        currentPage,
+        brand,
+        freeShipping,
+        rangeValues,
+        rating,
+      } = filterParams;
 
       let sortedCards = [...cards].sort((a, b) => {
         switch (sortBy) {
@@ -56,6 +65,21 @@ export function MainBody() {
         sortedCards = sortedCards.filter((card) =>
           brand.includes(card.brand as string),
         );
+      }
+
+      if (freeShipping) {
+        sortedCards = sortedCards.filter((card) => card.free_shipping);
+      }
+
+      const [min, max] = rangeValues;
+      if (min !== MIN_PRICE || max !== MAX_PRICE) {
+        sortedCards = sortedCards.filter(
+          (card) => card.price >= min && card.price <= max,
+        );
+      }
+
+      if (rating) {
+        sortedCards = sortedCards.filter((card) => card.rating >= rating);
       }
 
       const updatedFilteredCards = sortedCards.slice(

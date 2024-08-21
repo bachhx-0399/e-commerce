@@ -5,6 +5,7 @@ interface CardProps {
   image: string;
   price: number;
   rating: number;
+  free_shipping: boolean;
   brand?: string;
 }
 

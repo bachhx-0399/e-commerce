@@ -1,4 +1,10 @@
 {
+  "ratings": [
+    { "rating": 1, "count": 18046 },
+    { "rating": 2, "count": 17890 },
+    { "rating": 3, "count": 17696 },
+    { "rating": 4, "count": 16076 }
+  ],
   "brands": [
     { "name": "Apple", "count": 442 },
     { "name": "GE", "count": 394 },

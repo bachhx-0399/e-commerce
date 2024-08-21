@@ -20,5 +20,12 @@
     "Do_Not_Have_Category": "Do not have category",
     "Network_Response_Was_Not_Ok": "Network response was not ok",
     "Brands": "Brands",
-    "Sidebar_Search_Branch_Placeholder": "Search for brands…"
+    "Sidebar_Search_Branch_Placeholder": "Search for brands…",
+    "Price": "Price",
+    "Free_Shipping": "Free shipping",
+    "Display_Only_Items_With_Free_Shipping": "Display only items with free shipping",
+    "Yes": "Yes",
+    "No": "No",
+    "Ratings": "Ratings",
+    "Star": "Star"
 }

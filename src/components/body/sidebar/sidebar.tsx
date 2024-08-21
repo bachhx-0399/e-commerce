@@ -3,12 +3,16 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 import { ENV } from "@/components/const/env.const";
+import { MAX_PRICE, MIN_PRICE } from "@/components/const/price-range-const";
 import { useAppSelector } from "@/redux/hooks";
 
 import { Brands } from "./brands";
 import { Category } from "./category";
 import type { CategoryProps } from "./category-props.type";
+import { FreeShipping } from "./free-shipping";
 import { Header } from "./header";
+import { Price } from "./price";
+import { Ratings } from "./ratings";
 
 export function Sidebar() {
   const [data, setData] = useState<CategoryProps[]>([]);
@@ -41,7 +45,15 @@ export function Sidebar() {
   // Use effect to update params whenever filterParams change
   useEffect(() => {
     if (filterParams) {
-      const { category, hitsPerPage, sortBy, brand } = filterParams;
+      const {
+        category,
+        hitsPerPage,
+        sortBy,
+        brand,
+        rangeValues,
+        freeShipping,
+        rating,
+      } = filterParams;
 
       const searchParams = new URLSearchParams();
       if (hitsPerPage !== undefined && hitsPerPage !== 16) {
@@ -55,6 +67,19 @@ export function Sidebar() {
         brand.forEach((value) => {
           searchParams.append("brands", value);
         });
+      }
+
+      const [min, max] = rangeValues;
+      if (min !== MIN_PRICE || max !== MAX_PRICE) {
+        searchParams.set("price", `${min}-${max}`);
+      }
+
+      if (freeShipping) {
+        searchParams.set("free_shipping", "true");
+      }
+
+      if (rating) {
+        searchParams.set("rating", rating.toString());
       }
 
       // Update the URL with new params
@@ -84,6 +109,9 @@ export function Sidebar() {
       <div className="container flex flex-col p-0 py-8">
         <Category categories={data} />
         <Brands />
+        <Price />
+        <FreeShipping />
+        <Ratings />
       </div>
     </div>
   );

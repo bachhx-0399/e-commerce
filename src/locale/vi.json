@@ -20,5 +20,12 @@
     "Do_Not_Have_Category": "Không có tên thể loại",
     "Network_Response_Was_Not_Ok": "Kết quả phản hồi không tốt",
     "Brands": "Nhãn hiệu",
-    "Sidebar_Search_Branch_Placeholder": "Tìm kiếm nhãn hiệu…"
+    "Sidebar_Search_Branch_Placeholder": "Tìm kiếm nhãn hiệu…",
+    "Price": "Giá",
+    "Free_Shipping": "Miễn phí vận chuyển",
+    "Display_Only_Items_With_Free_Shipping": "Chỉ hiển thị các mặt hàng được miễn phí vận chuyển",
+    "Yes": "Có",
+    "No": "Không",
+    "Ratings": "Điểm đánh giá",
+    "Star": "Sao"
 }

@@ -68,7 +68,7 @@ const Brands: React.FC<{}> = () => {
   }
 
   return (
-    <div className="container m-0 p-0">
+    <div className="container m-0 border-b-2 border-inherit px-0 py-8">
       <div className="pb-4 font-serif text-[12px] font-semibold leading-4 text-[#21243d]">
         {t("Brands")}
       </div>
