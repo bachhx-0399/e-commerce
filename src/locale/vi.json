@@ -18,5 +18,7 @@
     "Price_Ascending": "Giá tăng dần",
     "Price_Descending": "Giá giảm dần",
     "Do_Not_Have_Category": "Không có tên thể loại",
-    "Network_Response_Was_Not_Ok": "Kết quả phản hồi không tốt"
+    "Network_Response_Was_Not_Ok": "Kết quả phản hồi không tốt",
+    "Brands": "Nhãn hiệu",
+    "Sidebar_Search_Branch_Placeholder": "Tìm kiếm nhãn hiệu…"
 }
