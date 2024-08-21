@@ -3,7 +3,7 @@ import { Sidebar } from "./sidebar/sidebar";
 
 export function Body() {
   return (
-    <div className="mx-14 px-4 py-8">
+    <div className="mx-14 flex justify-center px-4 py-8">
       <main className="flex space-x-3">
         <div className="mr-14 flex-none">
           <Sidebar />

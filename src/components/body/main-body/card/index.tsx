@@ -1,5 +1,8 @@
 import { useTranslation } from "react-i18next";
 
+import { Highlight } from "@/components/common/highlight";
+import { useAppSelector } from "@/redux/hooks";
+
 import type { CardProps } from "./card.type";
 
 const Card: React.FC<CardProps> = ({
@@ -11,6 +14,7 @@ const Card: React.FC<CardProps> = ({
   rating,
 }) => {
   const { t } = useTranslation();
+  const query = useAppSelector((state) => state.filterParams.query);
 
   return (
     <div className="max-w-sm overflow-hidden">
@@ -23,11 +27,13 @@ const Card: React.FC<CardProps> = ({
         </div>
         <h1>
           <span className="text-sm font-bold leading-5 text-[#21243d]">
-            {name}
+            {/* {name} */}
+            <Highlight text={name} searchTerm={query} />
           </span>
         </h1>
         <p className="mb-3.5 mt-0.5 text-sm leading-5">
-          <span>{description}</span>
+          {/* <span>{description}</span> */}
+          <Highlight text={description} searchTerm={query} truncate />
         </p>
         <footer>
           <p className="flex items-center space-x-1 text-[14px] leading-5">

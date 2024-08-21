@@ -46,9 +46,11 @@ export function MainBody() {
   useEffect(() => {
     if (filterParams) {
       const {
+        query,
         hitsPerPage = 16,
         sortBy,
         currentPage,
+        category,
         brand,
         freeShipping,
         rangeValues,
@@ -86,6 +88,28 @@ export function MainBody() {
 
       if (rating) {
         sortedCards = sortedCards.filter((card) => card.rating >= rating);
+      }
+
+      if (category !== "") {
+        const categories = decodeURIComponent(category).split("/");
+        sortedCards = sortedCards.filter((card) =>
+          // all element of categories must be in card.categories
+          categories.every((ctg) => card.categories.includes(ctg)),
+        );
+      }
+
+      if (query !== "") {
+        const lowerCaseQuery = query.toLowerCase();
+
+        sortedCards = sortedCards.filter((card) => {
+          const lowerCaseName = card.name.toLowerCase();
+          const lowerCaseDescription = card.description.toLowerCase();
+
+          return (
+            lowerCaseName.includes(lowerCaseQuery) ||
+            lowerCaseDescription.includes(lowerCaseQuery)
+          );
+        });
       }
 
       const updatedFilteredCards = sortedCards.slice(
@@ -128,7 +152,7 @@ export function MainBody() {
         ))}
       </div>
       <div className="flex flex-col items-center">
-        {filterParams.totalPages !== 1 && <Pagination />}
+        {filterParams.totalPages > 1 && <Pagination />}
       </div>
     </div>
   );

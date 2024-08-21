@@ -122,6 +122,22 @@
       "name": "Cell Phones",
       "count": 3065,
       "subCategory": []
+    },
+    {
+      "name": "Computers & Tablets",
+      "count": 1406,
+      "subCategory": [
+        {
+          "name": "Laptops",
+          "count": 1406,
+          "subCategory": []
+        },
+        {
+          "name": "Optical Drives",
+          "count": 1406,
+          "subCategory": []
+        }
+      ]
     }
   ],
   "cards" : [

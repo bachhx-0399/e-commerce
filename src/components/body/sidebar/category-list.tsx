@@ -9,14 +9,9 @@ const CategoryList: React.FC<{
   parentPath: string[];
   onCategoryClick: (fullPath: string[]) => void;
 }> = ({ categories, currentPath, parentPath, onCategoryClick }) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [updatedCategories, setUpdatedCategories] = useState<CategoryProps[]>(
     [],
   );
-
-  const handleToggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -38,31 +33,27 @@ const CategoryList: React.FC<{
         >
           <div
             className="container m-0 flex cursor-pointer items-center space-x-2 p-0 pb-4"
-            onClick={() => handleToggle(index)}
+            onClick={() => onCategoryClick(category.fullPath || [])}
             role="presentation"
           >
             <img
               src={
-                openIndex === index
+                category.isActive
                   ? "/images/caret-down.svg"
                   : "/images/caret-up.svg"
               }
-              alt={openIndex === index ? t("Collapse") : t("Expand")}
+              alt={category.isActive ? t("Collapse") : t("Expand")}
               height={8}
               width={8}
             />
-            <span
-              className="text-sm leading-5"
-              onClick={() => onCategoryClick(category.fullPath || [])}
-              role="presentation"
-            >
+            <span className="text-sm leading-5" role="presentation">
               {category.name}
             </span>
             <span className="ml-2 rounded bg-[#41424714] px-1 font-sans text-[11px] font-medium">
               {category.count}
             </span>
           </div>
-          {category.subCategory.length > 0 && openIndex === index && (
+          {category.subCategory.length > 0 && category.isActive && (
             <CategoryList
               categories={category.subCategory}
               currentPath={currentPath}

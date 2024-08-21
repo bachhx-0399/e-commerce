@@ -46,6 +46,7 @@ export function Sidebar() {
   useEffect(() => {
     if (filterParams) {
       const {
+        query,
         category,
         hitsPerPage,
         sortBy,
@@ -85,6 +86,10 @@ export function Sidebar() {
 
       if (currentPage !== 1) {
         searchParams.set("page", currentPage.toString());
+      }
+
+      if (query !== "") {
+        searchParams.set("query", query);
       }
 
       // Update the URL with new params

@@ -1,13 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import useDebounce from "@/components/custom-hook/use-debounce";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { setQuery } from "@/redux/slices/filter-params-slice";
+
 export function Header() {
-  const [searchValue, setSearchValue] = useState<string>("");
+  const query = useAppSelector((state) => state.filterParams.query);
+  const [searchValue, setSearchValue] = useState<string>(query);
+  const debouncedSearchValue = useDebounce(searchValue, 300);
+  const dispatch = useAppDispatch();
   const { t } = useTranslation();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
   };
+
+  useEffect(() => {
+    dispatch(setQuery(debouncedSearchValue));
+  }, [debouncedSearchValue, dispatch]);
 
   return (
     <header className="header-backgound flex h-96 w-full flex-col items-center justify-center bg-yellow-600 bg-auto px-16 py-8">

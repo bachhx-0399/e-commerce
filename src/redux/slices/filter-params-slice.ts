@@ -6,6 +6,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { RatingOption } from "@/components/common/types/rating-option.type";
 
 interface FilterParams {
+  query: string;
   category: string;
   brand: string[];
   currentPage: number;
@@ -18,6 +19,7 @@ interface FilterParams {
 }
 
 const initialState: FilterParams = {
+  query: "",
   category: "",
   brand: [],
   currentPage: 1,
@@ -30,6 +32,9 @@ const filterParamsSlice = createSlice({
   name: "filterParams",
   initialState,
   reducers: {
+    setQuery: (state, action: PayloadAction<string>) => {
+      state.query = action.payload;
+    },
     setParams: (state, action: PayloadAction<FilterParams>) => {
       state.category = action.payload.category;
       state.brand = action.payload.brand;
@@ -69,6 +74,7 @@ const filterParamsSlice = createSlice({
 });
 
 export const {
+  setQuery,
   setParams,
   resetParams,
   setCategory,
