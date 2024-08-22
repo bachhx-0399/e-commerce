@@ -17,11 +17,13 @@ const Card: React.FC<CardProps> = ({
   const query = useAppSelector((state) => state.filterParams.query);
 
   return (
-    <div className="max-w-sm overflow-hidden">
-      <header className="flex aspect-square items-center justify-center">
-        <img className="max-w-[174px]" src={image} alt={name} />
+    <div className="flex max-w-sm gap-5 overflow-hidden md:flex-col md:gap-0">
+      <header className="flex aspect-square flex-1 items-center justify-center">
+        <div className="container max-h-[174px] max-w-[174px] p-0">
+          <img className="object-contain" src={image} alt={name} />
+        </div>
       </header>
-      <div className="m-0 p-0">
+      <div className="m-0 flex-[2] p-0">
         <div className="mb-2 mt-3 text-xs font-semibold uppercase text-[#21243d] opacity-70">
           {categories[0] || t("Do_Not_Have_Category")}
         </div>

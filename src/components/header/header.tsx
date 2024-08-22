@@ -21,7 +21,7 @@ export function Header() {
   }, [debouncedSearchValue, dispatch]);
 
   return (
-    <header className="header-backgound flex h-96 w-full flex-col items-center justify-center bg-yellow-600 bg-auto px-16 py-8">
+    <header className="header-backgound bg-black-600 flex h-96 w-full flex-col items-center justify-center bg-auto py-8 md:px-0 lg:px-16">
       <p className="flex justify-center">
         <a href="https://www.algolia.com/">
           <img
@@ -32,11 +32,11 @@ export function Header() {
           />
         </a>
       </p>
-      <p className="my-9 flex justify-center text-5xl font-thin text-white">
+      <p className="my-9 flex justify-center font-thin text-white md:text-3xl lg:text-5xl">
         {t("Header_Title")}
       </p>
-      <div className="mx-auto w-1/2">
-        <div className="relative flex h-14 w-full items-center overflow-hidden rounded-lg bg-white focus-within:shadow-lg">
+      <div className="w-5/6 lg:w-1/3">
+        <div className="relative top-32 flex h-14 w-full items-center overflow-hidden rounded-lg bg-white shadow-xl backdrop-blur-lg focus-within:shadow-lg md:top-0 md:shadow-none md:blur-none">
           <div className="grid h-full w-12 place-items-center text-yellow-400">
             <img
               src="/images/search.svg"
