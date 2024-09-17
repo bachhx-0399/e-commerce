@@ -8,11 +8,11 @@ const Header: React.FC<{}> = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex min-h-20 items-center justify-between">
+    <div className="flex min-h-20 items-center justify-between h-full border-b-2 border-inherit">
       <div className="container p-0">
         <h2 className="text-lg font-bold">{t("Filter")}</h2>
       </div>
-      <div className="container flex items-center justify-end p-0 text-xs">
+      <div className="container items-center justify-end p-0 text-xs hidden md:flex">
         <button
           className="flex cursor-not-allowed items-center gap-2"
           onClick={() => dispatch(resetParams())}

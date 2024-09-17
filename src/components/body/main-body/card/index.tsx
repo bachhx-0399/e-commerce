@@ -1,5 +1,8 @@
 import { useTranslation } from "react-i18next";
 
+import { Highlight } from "@/components/common/highlight";
+import { useAppSelector } from "@/redux/hooks";
+
 import type { CardProps } from "./card.type";
 
 const Card: React.FC<CardProps> = ({
@@ -11,23 +14,28 @@ const Card: React.FC<CardProps> = ({
   rating,
 }) => {
   const { t } = useTranslation();
+  const query = useAppSelector((state) => state.filterParams.query);
 
   return (
-    <div className="max-w-sm overflow-hidden">
-      <header className="flex aspect-square items-center justify-center">
-        <img className="max-w-[174px]" src={image} alt={name} />
+    <div className="flex max-w-sm gap-5 overflow-hidden md:flex-col md:gap-0">
+      <header className="flex aspect-square flex-1 items-center justify-center">
+        <div className="container max-h-[174px] max-w-[174px] p-0">
+          <img className="object-contain" src={image} alt={name} />
+        </div>
       </header>
-      <div className="m-0 p-0">
+      <div className="m-0 flex-[2] p-0">
         <div className="mb-2 mt-3 text-xs font-semibold uppercase text-[#21243d] opacity-70">
           {categories[0] || t("Do_Not_Have_Category")}
         </div>
         <h1>
           <span className="text-sm font-bold leading-5 text-[#21243d]">
-            {name}
+            {/* {name} */}
+            <Highlight text={name} searchTerm={query} />
           </span>
         </h1>
         <p className="mb-3.5 mt-0.5 text-sm leading-5">
-          <span>{description}</span>
+          {/* <span>{description}</span> */}
+          <Highlight text={description} searchTerm={query} truncate />
         </p>
         <footer>
           <p className="flex items-center space-x-1 text-[14px] leading-5">

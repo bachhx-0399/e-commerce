@@ -75,12 +75,39 @@
   }
 }
 
-.header-backgound {
-  background-image: url('/images/header-backgound-lg.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 div.container > ul.ml-3\.5:first-child {
   margin: 0;
+}
+
+@layer utilities {
+  .header-backgound {
+    background-image: url('/images/header-backgound-lg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: contain;  
+  }
+
+  @screen sm {
+    .header-background {
+      background-image: url('/images/header-backgound.png');
+    }
+  }
+
+  @screen md {
+    .header-background {
+      background-image: url('/images/header-backgound.png');
+    }
+  }
+
+  @screen lg {
+    .header-background {
+      background-image: url('/images/header-backgound-lg.png');
+    }
+  }
+
+  @screen xl {
+    .header-background {
+      background-image: url('/images/header-backgound-lg.png');
+    }
+  }
 }
